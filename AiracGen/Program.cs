@@ -143,6 +143,12 @@ for (var i = 0; i <= pastAiracsCount; i++)
         //Decrement the Airac Ident to the previous year
         var startIdentYear = int.Parse(startIdent.ToString()[..2]);
 
+        //Rollover from 2000 to 1999, since 2000 would be 0, 1999 would be -1, so we have to set the value to 100 to get 99 with the next subtraction
+        if(startIdentYear == 0)
+        {
+            startIdentYear = 100;
+        }
+
         var previousYearIdent = $"{startIdentYear -= 1}{maxAmountOfCyclesInYear}";
 
         if (startIdentYear < 10)
@@ -195,6 +201,6 @@ File.WriteAllText(airacPath, JsonSerializer.Serialize(airacs, new JsonSerializer
 
 Console.WriteLine($"{airacs.Count} Airacs generated in {airacPath}");
 
-//Process.Start("notepad.exe", airacPath);
+Process.Start("notepad.exe", airacPath);
 
-airacs.ForEach(x => Console.WriteLine($"{x.Ident} - {x.NumberInYear} - {x.StartDate.ToShortDateString()} - {x.EndDate.ToShortDateString()}"));
+//airacs.ForEach(x => Console.WriteLine($"{x.Ident} - {x.NumberInYear} - {x.StartDate.ToShortDateString()} - {x.EndDate.ToShortDateString()}"));

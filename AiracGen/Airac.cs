@@ -2,7 +2,7 @@
 {
     public class Airac
     {
-        public int Ident { get; set; }
+        public string Ident { get; set; }
 
         public DateOnly StartDate { get; set; }
 

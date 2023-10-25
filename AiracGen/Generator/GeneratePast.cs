@@ -49,6 +49,7 @@
                     //Decrement the Airac Ident to the previous year
                     var previousYearIdent = $"{startIdentYear -= 1}{maxAmountOfCyclesInYear}";
 
+                    //If the ýear is smaller than 10, we have to add a leading zero, otherwise the ident will be too short
                     if (startIdentYear < 10)
                     {
                         previousYearIdent = "0" + previousYearIdent;
@@ -66,6 +67,7 @@
                     startIdent = nextIdent;
                     continue;
                 }
+
                 startNumber--;
 
                 var ident = int.Parse(startIdent.Substring(2, 2));
@@ -78,6 +80,7 @@
 
                 var identString = identNumber.ToString();
 
+                //If the ident is smaller than 10, we have to add a leading zero, otherwise the ident will be too short
                 if (identNumber < 10)
                 {
                     identString = "0" + identNumber;
@@ -89,6 +92,11 @@
                 airac.NumberInYear = startNumber;
 
                 airacs.Add(airac);
+            }
+
+            if (airacs.Any(x => x.Ident.Length != 4))
+            {
+                throw new InvalidOperationException($"Something went wrong while generating Airacs, The ident");
             }
 
             return airacs;

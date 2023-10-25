@@ -12,8 +12,6 @@ _ = int.TryParse(Console.ReadLine(), out var pastAiracsCount) ? 0 : throw new In
 
 var airacs = AiracGenerator.GeneratePastAndFuture(pastAiracsCount, futureAiracsCount);
 
-var test = AiracGenerator.GenerateSingle("2512");
-
 airacs = airacs.OrderBy(x => x.StartDate).ToList();
 
 var airacPath = $@"{Environment.CurrentDirectory}\Airacs.txt";
@@ -25,7 +23,3 @@ Console.WriteLine($"{airacs.Count} Airacs generated in {airacPath}");
 Process.Start("notepad.exe", airacPath);
 
 Console.WriteLine("Program will close in 5 seconds");
-
-//await Task.Delay(5000);
-
-//airacs.ForEach(x => Console.WriteLine($"{x.Ident} - {x.NumberInYear} - {x.StartDate.ToShortDateString()} - {x.EndDate.ToShortDateString()}"));

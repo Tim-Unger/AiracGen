@@ -4,7 +4,7 @@ namespace AiracGen.Generator
 {
     public static class JsonExtension
     {
-        private static readonly JsonSerializerOptions _options = new JsonSerializerOptions() { WriteIndented = true };
+        private static readonly JsonSerializerOptions _options = new() { WriteIndented = true };
 
         public static string ToJson(this List<Airac> airacs) => JsonSerializer.Serialize(airacs, _options);
 

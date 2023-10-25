@@ -14,7 +14,7 @@ var airacs = AiracGenerator.GeneratePastAndFuture(pastAiracsCount, futureAiracsC
 
 airacs = airacs.OrderBy(x => x.StartDate).ToList();
 
-var airacPath = $@"{Environment.CurrentDirectory}\Airacs.txt";
+var airacPath = $@"{Environment.CurrentDirectory}\Airacs.json";
 
 File.WriteAllText(airacPath, JsonSerializer.Serialize(airacs, new JsonSerializerOptions() { WriteIndented = true}));
 

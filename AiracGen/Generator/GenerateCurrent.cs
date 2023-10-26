@@ -7,10 +7,10 @@ namespace AiracGen.Generator
         internal static Airac Generate()
         {
             //Default Start Airac
-            var startDate = new DateOnly(2022, 01, 27);
-            var endDate = startDate.AddDays(28);
-            var startIdent = "2201";
-            var startNumber = 1;
+            var startDate = DefaultAirac.StartDate;
+            var endDate = DefaultAirac.EndDate;
+            var startIdent = DefaultAirac.StartIdent;
+            var startNumber = DefaultAirac.StartNumber;
 
             var dateOnlyNow = DateOnly.FromDateTime(DateTime.UtcNow);
 

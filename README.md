@@ -43,6 +43,13 @@ Generate the current Airac
 Airac curentAirac = AiracGenerator.GenerateCurrent();
 ```
 
+Generate the next Airac
+(optional) 
+
+```cs
+Airac curentAirac = AiracGenerator.GenerateNext(<pre><i>(optional)</i></pre> string ident);
+```
+
 Generate a single Airac by ident
 
 ```cs

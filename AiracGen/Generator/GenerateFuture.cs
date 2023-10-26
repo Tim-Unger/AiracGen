@@ -41,7 +41,7 @@ namespace AiracGen.Generator
             if (!airacs.AreAllValuesCorrect())
             {
                 throw new UnreachableException(
-                    "The program should have already throw earlier, something went wrong"
+                    "The program should have already thrown earlier, something went wrong"
                 );
             }
 

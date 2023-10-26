@@ -15,7 +15,7 @@
 
             var currentAirac = AiracGenerator.GenerateSingle(ident);
 
-            var numberInYear = currentAirac.StartDate.Year != currentAirac.StartDate.AddDays(-28).Year ? 1 : currentAirac.NumberInYear--;
+            var numberInYear = currentAirac.StartDate.Year != currentAirac.StartDate.AddDays(-28).Year ? 1 : currentAirac.NumberInYear -= 1;
 
             return new Airac()
             {

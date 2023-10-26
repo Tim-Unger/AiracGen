@@ -9,6 +9,10 @@ namespace AiracGen.Generator
         public static string ToJson(this List<Airac> airacs) => JsonSerializer.Serialize(airacs, _options);
 
         public static string ToJson(this Airac airac) => JsonSerializer.Serialize(airac, _options);
+
+        public static void SaveJson(this List<Airac> airacs, string path) => File.WriteAllText(path, JsonSerializer.Serialize(airacs, _options));
+
+        public static void SaveJson(this Airac airac, string path) => File.WriteAllText(path, JsonSerializer.Serialize(airac, _options));
     }
 
     public static class AiracExtensions

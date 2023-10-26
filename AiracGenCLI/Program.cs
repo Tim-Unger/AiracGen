@@ -1,6 +1,5 @@
 ﻿using AiracGen;
 using System.Diagnostics;
-using System.Text.Json;
 
 Console.WriteLine("Enter the number of Airacs in the Future you want to generate");
 
@@ -16,7 +15,7 @@ airacs = airacs.OrderBy(x => x.StartDate).ToList();
 
 var airacPath = $@"{Environment.CurrentDirectory}\Airacs.json";
 
-File.WriteAllText(airacPath, JsonSerializer.Serialize(airacs, new JsonSerializerOptions() { WriteIndented = true}));
+airacs.SaveJson(airacPath);
 
 Console.WriteLine($"{airacs.Count} Airacs generated in {airacPath}");
 

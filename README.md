@@ -2,9 +2,9 @@
 
 ## Quickstart
 
-Vars are explicitly declared on purpose to help with documentation
+**Vars are explicitly declared on purpose to help with documentation**
 
-*List\<Airac\>* is always sorted by oldest first, you will need to run your own *OrderBy()* to re-sort the list to your liking
+**_List\<Airac\>_ is always sorted by oldest first, you will need to run your own _OrderBy()_ to re-sort the list to your liking**
 
 
 
@@ -34,7 +34,7 @@ Generate Airacs in the past and future
 int pastAiracAmount = 10;
 int futureAiracAmount = 100;
 
-List<Airac> airacs = AiracGenerator.GeneratePast(pastAiracAmount, futureAiracAmount);
+List<Airac> airacs = AiracGenerator.GeneratePastAndFuture(pastAiracAmount, futureAiracAmount);
 ```
 
 Generate the current Airac

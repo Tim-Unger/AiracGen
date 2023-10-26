@@ -10,4 +10,12 @@ namespace AiracGen.Generator
 
         public static string ToJson(this Airac airac) => JsonSerializer.Serialize(airac, _options);
     }
+
+    public static class AiracExtensions
+    {
+        public static Airac NextAirac(this Airac airac) => AiracGenerator.GenerateNext(airac.Ident);
+
+        public static Airac PreviousAirac(this Airac airac) => AiracGenerator.GeneratePrevious(airac.Ident);
+    }
+
 }

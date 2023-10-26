@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AiracGen" Version="1.0.0" />
+    <ProjectReference Include="..\AiracGen\AiracGen.csproj" />
   </ItemGroup>
 
 </Project>

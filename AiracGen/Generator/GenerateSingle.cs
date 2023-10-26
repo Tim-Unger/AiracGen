@@ -14,24 +14,10 @@
                 DateOnly.FromDateTime(DateTime.UtcNow).Year.ToString()[2..]
             );
 
-            //if (identYear >= currentYear && identYear)
-            //{
-            //    var futureYearAmount = identYear - currentYear;
-
-            //    if (futureYearAmount == 0)
-            //    {
-            //        futureYearAmount = 1;
-            //    }
-
-            //    var futureAiracs = AiracGenerator.GenerateFuture(13 * futureYearAmount);
-
-            //    return futureAiracs.FirstOrDefault(x => x.Ident == ident)
-            //        ?? throw new Exception("Ident not found");
-            //}
-
             //We have to subtract the smaller number, so if the ident year is larger we have to subtract the current year, if not we have to subtract the ident year
             var yearAmount = currentYear <= identYear ? identYear - currentYear : currentYear - identYear;
 
+            //Provided year is the current year
             if(yearAmount == 0)
             {
                 yearAmount = 1;

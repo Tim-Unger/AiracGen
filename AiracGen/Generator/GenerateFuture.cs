@@ -1,4 +1,6 @@
-﻿namespace AiracGen.Generator
+﻿using System.Diagnostics;
+
+namespace AiracGen.Generator
 {
     internal class Future
     {
@@ -26,53 +28,21 @@
                 airac.StartDate = startDate;
                 airac.EndDate = endDate;
 
-                if (startDate.Year != startDate.AddDays(-28).Year)
-                {
-                    //Increment the Airac Ident to the next year
-                    var startIdentYear = int.Parse(startIdent.ToString()[..2]);
+                startNumber = startDate.Year != startDate.AddDays(-28).Year ? 1 : startNumber += 1;
 
-                    var nextYearIdent = $"{startIdentYear += 1}01";
-                    startNumber = 1;
-
-                    var nextIdent = nextYearIdent;
-
-                    airac.Ident = nextIdent;
-                    airac.NumberInYear = startNumber;
-
-                    airacs.Add(airac);
-
-                    startIdent = nextIdent;
-                    continue;
-                }
-                startNumber++;
-
-                var ident = int.Parse(startIdent.Substring(2, 2));
-
-                var setIndex = ident > 8 ? 2 : 3;
-                var takeIndex = setIndex == 3 ? 1 : 2;
-
-                var identYear = startIdent[..2];
-                var identNumber = int.Parse(startIdent.Substring(setIndex, takeIndex)) + 1;
-
-                var identString = identNumber.ToString();
-
-                //If the ident is smaller than 10, we have to add a leading zero, otherwise the ident will be too short
-                if (identNumber < 10)
-                {
-                    identString = "0" + identNumber;
-                }
-
-                startIdent = $"{identYear}{identString}";
-
+                startIdent = startIdent.IncrementIdent(startDate);
                 airac.Ident = startIdent;
                 airac.NumberInYear = startNumber;
 
                 airacs.Add(airac);
             }
 
-            if(airacs.Any(x => x.Ident.Length != 4))
+            //Checks that everything got generated correctly
+            if (!airacs.AreAllValuesCorrect())
             {
-                throw new InvalidOperationException($"Something went wrong while generating Airacs, The ident");
+                throw new UnreachableException(
+                    "The program should have already thrown earlier, something went wrong"
+                );
             }
 
             return airacs;

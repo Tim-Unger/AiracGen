@@ -82,7 +82,7 @@ namespace AiracGen
 
         /// <summary>
         /// Gets all Airacs between the given years (inclusive of the provided years)
-        /// Squashed as List<Airac>
+        /// Squashed into a single List<Airac> with all Airacs
         /// </summary>
         /// <param name="startYear">The Start-Year</param>
         /// <param name="endYear">The End-Year</param>
@@ -91,14 +91,27 @@ namespace AiracGen
 
         /// <summary>
         /// Gets all Airacs between the given years (inclusive of the provided years)
+        /// The Airacs are sorted into sublists of the respective year
         /// </summary>
         /// <param name="startYear">The Start-Year</param>
         /// <param name="endYear">The End-Year</param>
         /// <returns></returns>
         public static List<List<Airac>> GenerateBetweenYearsSorted(int startYear, int endYear) => BetweenYears.GenerateSorted(startYear, endYear);
 
+        /// <summary>
+        /// Gets all Airacs of the given years
+        /// Squashed into a single List<Airac> with all Airacs
+        /// </summary>
+        /// <param name="years">the respective years</param>
+        /// <returns></returns>
         public static List<Airac> GenerateForYearsUnsorted(params int[] years) => ForYears.GenerateUnsorted(years);
 
+        /// <summary>
+        /// Gets all Airacs of the given years
+        /// The Airacs are sorted into sublists of the respective year
+        /// </summary>
+        /// <param name="years">the respective years</param>
+        /// <returns></returns>
         public static List<List<Airac>> GenerateForYearsSorted(params int[] years) => ForYears.GenerateSorted(years);
     }
 }

@@ -12,7 +12,7 @@
 
             if(year.ToString().Length != 4)
             {
-                throw new Exception("Year was not a valid year");
+                throw new Exception($"Year {year} was not a valid year");
             }
 
             var maxAmountOfCyclesInYear = 0;

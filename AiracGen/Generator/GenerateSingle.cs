@@ -29,7 +29,7 @@
             var airacs = AiracGenerator.GeneratePastAndFuture(15 * yearAmount, 15 * yearAmount);
 
             return airacs.FirstOrDefault(x => x.Ident == ident)
-                ?? throw new Exception("Ident not found");
+                ?? throw new Exception($"Ident {ident} not found");
         }
     }
 }

@@ -1,3 +1,3 @@
 ﻿using AiracGen;
 
-_ = AiracGenerator.GenerateByYear(2021);
+var year = AiracGenerator.GenerateByYear(2020);

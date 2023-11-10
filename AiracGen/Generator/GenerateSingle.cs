@@ -17,6 +17,8 @@
             //We have to subtract the smaller number, so if the ident year is larger we have to subtract the current year, if not we have to subtract the ident year
             var yearAmount = currentYear <= identYear ? identYear - currentYear : currentYear - identYear;
 
+            yearAmount++;
+
             //Provided year is the current year
             if(yearAmount == 0)
             {

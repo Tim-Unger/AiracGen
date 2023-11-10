@@ -5,7 +5,9 @@ VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AiracGenCLI", "AiracGenCLI\AiracGenCLI.csproj", "{81D9B1F3-754C-4240-A9C0-C4B2CCFAAAF6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AiracGen", "AiracGen\AiracGen.csproj", "{581B0ACD-C794-4D70-9400-21E4BC237646}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AiracGen", "AiracGen\AiracGen.csproj", "{581B0ACD-C794-4D70-9400-21E4BC237646}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AiracGen.Debugger", "AiracGen.Debugger\AiracGen.Debugger.csproj", "{26AA08BA-B609-40E8-A257-0BC2D3B1DC0E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{581B0ACD-C794-4D70-9400-21E4BC237646}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{581B0ACD-C794-4D70-9400-21E4BC237646}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{581B0ACD-C794-4D70-9400-21E4BC237646}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26AA08BA-B609-40E8-A257-0BC2D3B1DC0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26AA08BA-B609-40E8-A257-0BC2D3B1DC0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26AA08BA-B609-40E8-A257-0BC2D3B1DC0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26AA08BA-B609-40E8-A257-0BC2D3B1DC0E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

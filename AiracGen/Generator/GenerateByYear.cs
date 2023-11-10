@@ -45,6 +45,7 @@
                 identList.Add(ident);
             }
 
+            //We now have every possible Ident in the provided year, so we can create an Airac of every Ident
             return identList.Select(AiracGenerator.GenerateSingle).ToList();
         }
     }

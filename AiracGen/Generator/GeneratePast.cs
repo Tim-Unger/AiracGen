@@ -47,6 +47,8 @@ namespace AiracGen.Generator
                 airacs.Add(airac);
             }
 
+            airacs = airacs.OrderBy(x => x.StartDate).ToList();
+
             //Checks that everything got generated correctly
             if (!airacs.AreAllValuesCorrect())
             {

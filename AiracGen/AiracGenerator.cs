@@ -76,8 +76,42 @@ namespace AiracGen
         /// Get all Airacs in the provided year
         /// If you only provide two chars (e.g. 23) the program assums that you mean the current century (=> 2023)
         /// </summary>
-        /// <param name="year"></param>
+        /// <param name="year">the year you want to get the Airacs of</param>
         /// <returns></returns>
         public static List<Airac> GenerateByYear(int year) => ByYear.Generate(year);
+
+        /// <summary>
+        /// Gets all Airacs between the given years (inclusive of the provided years)
+        /// Squashed into a single List<Airac> with all Airacs
+        /// </summary>
+        /// <param name="startYear">The Start-Year</param>
+        /// <param name="endYear">The End-Year</param>
+        /// <returns></returns>
+        public static List<Airac> GenerateBetweenYears(int startYear, int endYear) => BetweenYears.GenerateUnsorted(startYear, endYear);
+
+        /// <summary>
+        /// Gets all Airacs between the given years (inclusive of the provided years)
+        /// The Airacs are sorted into sublists of the respective year
+        /// </summary>
+        /// <param name="startYear">The Start-Year</param>
+        /// <param name="endYear">The End-Year</param>
+        /// <returns></returns>
+        public static List<List<Airac>> GenerateBetweenYearsSorted(int startYear, int endYear) => BetweenYears.GenerateSorted(startYear, endYear);
+
+        /// <summary>
+        /// Gets all Airacs of the given years
+        /// Squashed into a single List<Airac> with all Airacs
+        /// </summary>
+        /// <param name="years">the respective years</param>
+        /// <returns></returns>
+        public static List<Airac> GenerateForYearsUnsorted(params int[] years) => ForYears.GenerateUnsorted(years);
+
+        /// <summary>
+        /// Gets all Airacs of the given years
+        /// The Airacs are sorted into sublists of the respective year
+        /// </summary>
+        /// <param name="years">the respective years</param>
+        /// <returns></returns>
+        public static List<List<Airac>> GenerateForYearsSorted(params int[] years) => ForYears.GenerateSorted(years);
     }
 }

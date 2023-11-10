@@ -17,6 +17,8 @@
             //We have to subtract the smaller number, so if the ident year is larger we have to subtract the current year, if not we have to subtract the ident year
             var yearAmount = currentYear <= identYear ? identYear - currentYear : currentYear - identYear;
 
+            yearAmount++;
+
             //Provided year is the current year
             if(yearAmount == 0)
             {
@@ -27,7 +29,7 @@
             var airacs = AiracGenerator.GeneratePastAndFuture(15 * yearAmount, 15 * yearAmount);
 
             return airacs.FirstOrDefault(x => x.Ident == ident)
-                ?? throw new Exception("Ident not found");
+                ?? throw new Exception($"Ident {ident} not found");
         }
     }
 }

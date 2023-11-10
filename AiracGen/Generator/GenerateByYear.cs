@@ -12,7 +12,7 @@
 
             if(year.ToString().Length != 4)
             {
-                throw new Exception("Year was not a valid year");
+                throw new Exception($"Year {year} was not a valid year");
             }
 
             var maxAmountOfCyclesInYear = 0;
@@ -45,6 +45,7 @@
                 identList.Add(ident);
             }
 
+            //We now have every possible Ident in the provided year, so we can create an Airac of every Ident
             return identList.Select(AiracGenerator.GenerateSingle).ToList();
         }
     }

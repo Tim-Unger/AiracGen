@@ -10,7 +10,7 @@
             if(ident is null)
             {
                 //No ident assumes the current airac, so we will just create one airac in the future and return it
-                return AiracGenerator.GenerateFuture(1)[1];
+                return AiracGenerator.GenerateFuture(1)[0];
             }
 
             var currentAirac = AiracGenerator.GenerateSingle(ident);

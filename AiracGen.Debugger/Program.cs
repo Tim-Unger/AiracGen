@@ -1,6 +1,6 @@
 ﻿using AiracGen;
 
-var next = AiracGenerator.GenerateNext();
+var next = AiracGenerator.GeneratePrevious();
 
 var airacs = AiracGenerator.GenerateFuture(20);
 

@@ -8,7 +8,7 @@ namespace AiracGen.Generator
         {
             var currentAirac = Current.Generate();
 
-            var airacs = new List<Airac>() { currentAirac };
+            var airacs = new List<Airac>();
 
             var startDate = currentAirac.StartDate;
             var endDate = currentAirac.EndDate;

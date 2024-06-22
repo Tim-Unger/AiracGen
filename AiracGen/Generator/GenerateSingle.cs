@@ -9,6 +9,12 @@
                 throw new ArgumentOutOfRangeException("Please provide a four letter ident");
             }
 
+            var current = Current.Generate();
+            if(ident == current.Ident)
+            {
+                return current;
+            }
+
             var identYear = int.Parse(ident[..2]);
             var currentYear = int.Parse(
                 DateOnly.FromDateTime(DateTime.UtcNow).Year.ToString()[2..]

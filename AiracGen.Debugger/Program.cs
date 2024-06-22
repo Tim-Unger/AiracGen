@@ -2,6 +2,6 @@
 
 var next = AiracGenerator.GeneratePrevious();
 
-var airacs = AiracGenerator.GenerateFuture(20);
+var airacs = AiracGenerator.GenerateSingle("2406");
 
-airacs.ForEach(x => Console.WriteLine(x.Ident));
+//airacs.ForEach(x => Console.WriteLine(x.Ident));

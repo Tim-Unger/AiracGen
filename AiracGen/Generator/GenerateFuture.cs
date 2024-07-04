@@ -2,11 +2,11 @@
 
 namespace AiracGen.Generator
 {
-    internal class Future
+    internal static partial class Gen
     {
-        internal static List<Airac> Generate(int amount)
+        internal static List<Airac> GenerateFuture(int amount)
         {
-            var currentAirac = Current.Generate();
+            var currentAirac = GenerateCurrent();
 
             var airacs = new List<Airac>();
 

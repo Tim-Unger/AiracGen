@@ -1,11 +1,11 @@
 ﻿namespace AiracGen.Generator
 {
-    internal class Next
+    internal static partial class Gen
     {
-        internal static Airac Generate() => GenerateNext(null);
-        internal static Airac Generate(string ident) => GenerateNext(ident);
+        internal static Airac GenerateNext() => Next(null);
+        internal static Airac GenerateNext(string ident) => Next(ident);
         
-        private static Airac GenerateNext(string? ident)
+        private static Airac Next(string? ident)
         {
             if(ident is null)
             {

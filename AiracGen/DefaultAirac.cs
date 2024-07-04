@@ -1,6 +1,6 @@
 ﻿namespace AiracGen
 {
-    public class DefaultAirac
+    public static class DefaultAirac
     {
         public static readonly DateOnly StartDate = new(2022, 01, 27);
 

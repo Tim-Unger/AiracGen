@@ -8,7 +8,7 @@
             if(airacs.Any(x => x.Ident.Length != 4))
             {
                 //TODO fails here when generating 1000+ Airacs
-                //var failed = airacs.Where(x => x.Ident.Length != 4);
+                var failed = airacs.Where(x => x.Ident.Length != 4);
                 throw new InvalidDataException("One ident is not four letters long");
             }
 

@@ -3,16 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AiracGenCLI", "AiracGenCLI\AiracGenCLI.csproj", "{81D9B1F3-754C-4240-A9C0-C4B2CCFAAAF6}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AiracGen", "AiracGen\AiracGen.csproj", "{581B0ACD-C794-4D70-9400-21E4BC237646}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AiracGen.Debugger", "AiracGen.Debugger\AiracGen.Debugger.csproj", "{26AA08BA-B609-40E8-A257-0BC2D3B1DC0E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AiracGen.Debugger", "AiracGen.Debugger\AiracGen.Debugger.csproj", "{26AA08BA-B609-40E8-A257-0BC2D3B1DC0E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2D8D1A22-F721-4E15-949C-6CE9949779DC}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AiracGen.Tests", "AiracGen.Tests\AiracGen.Tests.csproj", "{9766CE77-FDA9-4E51-B288-6EE1227E8669}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,10 +20,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{81D9B1F3-754C-4240-A9C0-C4B2CCFAAAF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{81D9B1F3-754C-4240-A9C0-C4B2CCFAAAF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{81D9B1F3-754C-4240-A9C0-C4B2CCFAAAF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{81D9B1F3-754C-4240-A9C0-C4B2CCFAAAF6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{581B0ACD-C794-4D70-9400-21E4BC237646}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{581B0ACD-C794-4D70-9400-21E4BC237646}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{581B0ACD-C794-4D70-9400-21E4BC237646}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -32,6 +28,10 @@ Global
 		{26AA08BA-B609-40E8-A257-0BC2D3B1DC0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26AA08BA-B609-40E8-A257-0BC2D3B1DC0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26AA08BA-B609-40E8-A257-0BC2D3B1DC0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9766CE77-FDA9-4E51-B288-6EE1227E8669}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9766CE77-FDA9-4E51-B288-6EE1227E8669}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9766CE77-FDA9-4E51-B288-6EE1227E8669}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9766CE77-FDA9-4E51-B288-6EE1227E8669}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

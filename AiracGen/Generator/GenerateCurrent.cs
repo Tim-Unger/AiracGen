@@ -2,9 +2,9 @@
 
 namespace AiracGen.Generator
 {
-    internal class Current
+    internal static partial class Gen
     {
-        internal static Airac Generate()
+        internal static Airac GenerateCurrent()
         {
             //Default Start Airac
             var startDate = DefaultAirac.StartDate;

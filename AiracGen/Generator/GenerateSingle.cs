@@ -1,15 +1,15 @@
 ﻿namespace AiracGen.Generator
 {
-    internal class Single
+    internal static partial class Gen
     {
-        internal static Airac Generate(string ident)
+        internal static Airac GenerateSingle(string ident)
         {
             if (ident.Length != 4)
             {
                 throw new ArgumentOutOfRangeException("Please provide a four letter ident");
             }
 
-            var current = Current.Generate();
+            var current = GenerateCurrent();
             if(ident == current.Ident)
             {
                 return current;

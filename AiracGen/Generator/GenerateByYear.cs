@@ -1,10 +1,10 @@
 ﻿namespace AiracGen.Generator
 {
-    internal class ByYear
+    internal static partial class Gen
     {
-        internal static List<Airac> Generate(int year)
+        internal static List<Airac> GenerateByYear(int year)
         {
-            //If only a two "letter" year is provided, we assume that is means the current century, so we will add 2000 years
+            //If only a two "letter" year is provided, we assume that is means the current century, so we will add 2000 years (so 23 + 2000 = 2023)
             if(year < 100)
             {
                 year += 2000;
@@ -12,12 +12,13 @@
 
             if(year.ToString().Length != 4)
             {
-                throw new Exception($"Year {year} was not a valid year");
+                throw new InvalidDataException($"Year {year} was not a valid year");
             }
 
             var maxAmountOfCyclesInYear = 0;
 
             var firstDayOfCurrentYear = new DateOnly(year, 1, 1);
+
             //We check how many Airac Cycles fit into the provided year
             while (firstDayOfCurrentYear.Year == firstDayOfCurrentYear.AddDays(28).Year)
             {

@@ -1,10 +1,16 @@
 ﻿namespace AiracGen.Generator
 {
-    internal class ForYears
+    internal static partial class Gen
     {
         //TODO distinct duplicate years
-        internal static List<Airac> GenerateUnsorted(params int[] years) => years.Select(ByYear.Generate).SelectMany(x => x).ToList();
+        internal static List<Airac> GenerateForYearsUnsorted(params int[] years) =>
+            years.Select(GenerateByYear)
+            .SelectMany(x => x)
+            .DistinctBy(x => x.Ident)
+            .ToList();
 
-        internal static List<List<Airac>> GenerateSorted(params int[] years) => years.Select(ByYear.Generate).ToList();
+        internal static List<List<Airac>> GenerateForYearsSorted(params int[] years) =>
+            years.Select(GenerateByYear)
+            .ToList();
     }
 }

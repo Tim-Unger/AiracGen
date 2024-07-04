@@ -1,15 +1,13 @@
 ﻿namespace AiracGen.Generator
 {
-    internal class BetweenYears
+    internal static partial class Gen
     {
-        internal static List<Airac> GenerateUnsorted(int startYear, int endYear) => (List<Airac>)Generate(startYear, endYear, true);
-        internal static List<List<Airac>> GenerateSorted(int startYear, int endYear) => (List<List<Airac>>)Generate(startYear, endYear, false);
+        internal static List<Airac> GenerateBetweenYearsUnsorted(int startYear, int endYear) => (List<Airac>)BetweenYears(startYear, endYear, true);
+        internal static List<List<Airac>> GenerateBetweenYearsSorted(int startYear, int endYear) => (List<List<Airac>>)BetweenYears(startYear, endYear, false);
        
 
-        private static object Generate(int startYear, int endYear, bool shouldBeSquashed)
+        private static object BetweenYears(int startYear, int endYear, bool shouldBeSquashed)
         {
-            var airacs = new List<Airac>();
-
             var years = new List<int>();
 
             var currentYear = startYear;
@@ -21,10 +19,10 @@
 
             if (shouldBeSquashed)
             {
-                return years.Select(ByYear.Generate).ToList().SelectMany(x => x).ToList();
+                return years.Select(GenerateByYear).SelectMany(x => x).ToList();
             }
 
-            return years.Select(ByYear.Generate).ToList();
+            return years.Select(GenerateByYear).ToList();
         }
     }
 }

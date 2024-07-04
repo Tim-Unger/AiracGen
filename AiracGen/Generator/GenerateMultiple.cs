@@ -1,7 +1,7 @@
 ﻿namespace AiracGen.Generator
 {
-    internal class Multiple
+    internal static partial class Gen
     {
-        internal static List<Airac> Generate(params string[] idents) => idents.Select(Single.Generate).ToList();
+        internal static List<Airac> GenerateMultiple(params string[] idents) => idents.Select(GenerateSingle).ToList();
     }
 }

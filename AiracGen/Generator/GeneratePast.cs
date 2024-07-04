@@ -2,11 +2,11 @@
 
 namespace AiracGen.Generator
 {
-    internal class Past
+    internal static partial class Gen
     {
-        internal static List<Airac> Generate(int amount)
+        internal static List<Airac> GeneratePast(int amount)
         {
-            var currentAirac = Current.Generate();
+            var currentAirac = GenerateCurrent();
 
             var airacs = new List<Airac>();
 

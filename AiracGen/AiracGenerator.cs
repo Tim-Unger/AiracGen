@@ -2,21 +2,21 @@
 
 namespace AiracGen
 {
-    public class AiracGenerator
+    public static class AiracGenerator
     {
         /// <summary>
         /// Generate x amount of Airacs in the future
         /// </summary>
         /// <param name="amount">the amount of Airacs to generate</param>
         /// <returns></returns>
-        public static List<Airac> GenerateFuture(int amount) => Future.Generate(amount);
+        public static List<Airac> GenerateFuture(int amount) => Gen.GenerateFuture(amount);
 
         /// <summary>
         /// Generate x amount of Airacs in the past
         /// </summary>
         /// <param name="amount">the amount of Airacs to generate</param>
         /// <returns></returns>
-        public static List<Airac> GeneratePast(int amount) => Past.Generate(amount);
+        public static List<Airac> GeneratePast(int amount) => Gen.GeneratePast(amount);
 
         /// <summary>
         /// Generate x amount of Airacs in the past and y the amount of Airacs in the future
@@ -24,53 +24,53 @@ namespace AiracGen
         /// <param name="pastAmount">the amount of past Airacs to generate</param>
         /// <param name="futureAmount">the amount of future Airacs to generate</param>
         /// <returns></returns>
-        public static List<Airac> GeneratePastAndFuture(int pastAmount, int futureAmount) => PastAndFuture.Generate(pastAmount, futureAmount);
+        public static List<Airac> GeneratePastAndFuture(int pastAmount, int futureAmount) => Gen.GeneratePastAndFuture(pastAmount, futureAmount);
 
         /// <summary>
         /// Generate a single Airac identified by the ident provided
         /// </summary>
         /// <param name="ident">the ident of the Airac to generate</param>
         /// <returns></returns>
-        public static Airac GenerateSingle(string ident) => Generator.Single.Generate(ident);
+        public static Airac GenerateSingle(string ident) => Gen.GenerateSingle(ident);
 
         /// <summary>
         /// Generate Airacs identified by the idents provided
         /// </summary>
         /// <param name="idents">the idents of the Airacs to generate</param>
         /// <returns></returns>
-        public static List<Airac> GenerateMultiple(params string[] idents) => Multiple.Generate(idents);
+        public static List<Airac> GenerateMultiple(params string[] idents) => Gen.GenerateMultiple(idents);
 
         /// <summary>
         /// Get the current Airac
         /// </summary>
         /// <returns></returns>
-        public static Airac GenerateCurrent() => Current.Generate();
+        public static Airac GenerateCurrent() => Gen.GenerateCurrent();
 
         /// <summary>
         /// Get the next Airac
         /// </summary>
         /// <returns></returns>
-        public static Airac GenerateNext() => Next.Generate();
+        public static Airac GenerateNext() => Gen.GenerateNext();
 
         /// <summary>
         /// Get the next Airac based on the ident provided
         /// </summary>
         /// <param name="ident">the ident of the base/current Airac</param>
         /// <returns></returns>
-        public static Airac GenerateNext(string ident) => Next.Generate(ident);
+        public static Airac GenerateNext(string ident) => Gen.GenerateNext(ident);
 
         /// <summary>
         /// Get the previous Airac
         /// </summary>
         /// <returns></returns>
-        public static Airac GeneratePrevious() => Previous.Generate();
+        public static Airac GeneratePrevious() => Gen.GeneratePrevious();
 
         /// <summary>
         /// Get the previous Airac based on the ident provided
         /// </summary>
         /// <param name="ident">the ident of the base/current Airac</param>
         /// <returns></returns>
-        public static Airac GeneratePrevious(string ident) => Previous.Generate(ident);
+        public static Airac GeneratePrevious(string ident) => Gen.GeneratePrevious(ident);
 
         /// <summary>
         /// Get all Airacs in the provided year
@@ -78,7 +78,7 @@ namespace AiracGen
         /// </summary>
         /// <param name="year">the year you want to get the Airacs of</param>
         /// <returns></returns>
-        public static List<Airac> GenerateByYear(int year) => ByYear.Generate(year);
+        public static List<Airac> GenerateByYear(int year) => Gen.GenerateByYear(year);
 
         /// <summary>
         /// Gets all Airacs between the given years (inclusive of the provided years)
@@ -87,7 +87,7 @@ namespace AiracGen
         /// <param name="startYear">The Start-Year</param>
         /// <param name="endYear">The End-Year</param>
         /// <returns></returns>
-        public static List<Airac> GenerateBetweenYears(int startYear, int endYear) => BetweenYears.GenerateUnsorted(startYear, endYear);
+        public static List<Airac> GenerateBetweenYears(int startYear, int endYear) => Gen.GenerateBetweenYearsUnsorted(startYear, endYear);
 
         /// <summary>
         /// Gets all Airacs between the given years (inclusive of the provided years)
@@ -96,7 +96,7 @@ namespace AiracGen
         /// <param name="startYear">The Start-Year</param>
         /// <param name="endYear">The End-Year</param>
         /// <returns></returns>
-        public static List<List<Airac>> GenerateBetweenYearsSorted(int startYear, int endYear) => BetweenYears.GenerateSorted(startYear, endYear);
+        public static List<List<Airac>> GenerateBetweenYearsSorted(int startYear, int endYear) => Gen.GenerateBetweenYearsSorted(startYear, endYear);
 
         /// <summary>
         /// Gets all Airacs of the given years
@@ -104,7 +104,7 @@ namespace AiracGen
         /// </summary>
         /// <param name="years">the respective years</param>
         /// <returns></returns>
-        public static List<Airac> GenerateForYearsUnsorted(params int[] years) => ForYears.GenerateUnsorted(years);
+        public static List<Airac> GenerateForYearsUnsorted(params int[] years) => Gen.GenerateForYearsUnsorted(years);
 
         /// <summary>
         /// Gets all Airacs of the given years
@@ -112,6 +112,6 @@ namespace AiracGen
         /// </summary>
         /// <param name="years">the respective years</param>
         /// <returns></returns>
-        public static List<List<Airac>> GenerateForYearsSorted(params int[] years) => ForYears.GenerateSorted(years);
+        public static List<List<Airac>> GenerateForYearsSorted(params int[] years) => Gen.GenerateForYearsSorted(years);
     }
 }

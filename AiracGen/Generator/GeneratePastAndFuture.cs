@@ -1,13 +1,13 @@
 ﻿namespace AiracGen.Generator
 {
-    internal class PastAndFuture
+    internal static partial class Gen
     {
-        internal static List<Airac> Generate(int pastAmount, int futureAmount)
+        internal static List<Airac> GeneratePastAndFuture(int pastAmount, int futureAmount)
         {
             var airacs = new List<Airac>();
 
-            airacs.AddRange(Past.Generate(pastAmount));
-            airacs.AddRange(Future.Generate(futureAmount));
+            airacs.AddRange(GeneratePast(pastAmount));
+            airacs.AddRange(GenerateFuture(futureAmount));
 
             return airacs
                 .DistinctBy(x => x.Ident) //The current Airac gets added with the past and the future airac, so we have to delete one of them

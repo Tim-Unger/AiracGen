@@ -13,6 +13,18 @@
 using AiracGen;
 ```
 
+Generate a single Airac by ident
+
+```cs
+Airac singleAirac = AiracGenerator.GenerateSingle("2301");
+```
+
+Generate the current Airac
+
+```cs
+Airac currentAirac = AiracGenerator.GenerateCurrent();
+```
+
 Generate Airacs in the future
 
 ```cs
@@ -38,18 +50,12 @@ int futureAiracAmount = 100;
 List<Airac> airacs = AiracGenerator.GeneratePastAndFuture(pastAiracAmount, futureAiracAmount);
 ```
 
-Generate the current Airac
-
-```cs
-Airac currentAirac = AiracGenerator.GenerateCurrent();
-```
-
 Generate the next Airac
 
 (optional) you can provide a "base" ident from which the next Airac will be returned
 
 ```cs
-Airac nextAirac = AiracGenerator.GenerateNext((optional)string ident);
+Airac nextAirac = AiracGenerator.GenerateNext(string ident);
 ```
 
 Generate the previous Airac
@@ -57,13 +63,7 @@ Generate the previous Airac
 (optional) you can provide a "base" ident from which the previous Airac will be returned
 
 ```cs
-Airac previousAirac = AiracGenerator.GeneratePrevious((optional)string ident);
-```
-
-Generate a single Airac by ident
-
-```cs
-Airac singleAirac = AiracGenerator.GenerateSingle("2301");
+Airac previousAirac = AiracGenerator.GeneratePrevious(string ident);
 ```
 
 Generate multiple Airacs by ident
@@ -94,7 +94,7 @@ Save an Airac-JSON
 
 You can run *SaveJson(strng path)* on *Airac* and *List\<Airac\>*
 
-This will save a .json to the provided path (you can use a full path (<yourPath>\airaclistname.json) or only the directory <youPath>\)
+This will save a .json to the provided path (you can use a full path (<yourPath>\airaclistname.json) or only the directory <yourPath>\)
 
 ```cs
 var currentDir = Environment.CurrentDirectory;

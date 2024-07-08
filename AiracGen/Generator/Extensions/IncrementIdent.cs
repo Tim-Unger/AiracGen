@@ -1,6 +1,6 @@
-﻿namespace AiracGen.Generator
+﻿namespace AiracGen.Generator.Extensions
 {
-    internal static partial class AiracGenExtensions
+    public static partial class AiracGenExtensions
     {
         internal static string IncrementIdent(this string startIdent, DateOnly startDate)
         {
@@ -9,7 +9,8 @@
                 //Increment the Airac Ident to the next year
                 var startIdentYear = int.Parse(startIdent.ToString()[..2]);
 
-                var nextYearIdent = $"{startIdentYear += 1}01";
+                var nextIdentYear = startIdentYear += 1;
+                var nextYearIdent = $"{nextIdentYear}01";
 
                 var nextIdent = nextYearIdent;
 
@@ -35,5 +36,7 @@
 
            return $"{identYear}{identString}";
         }
+
+        public static Airac IncrementAirac(this Airac airac) => AiracGenerator.GenerateNext(airac.Ident);
     }
 }

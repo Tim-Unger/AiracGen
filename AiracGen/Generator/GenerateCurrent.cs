@@ -21,6 +21,7 @@ namespace AiracGen.Generator
             }
 
             //Determine the current Airac
+            //We will move the Airac up one from the Base Airac until we find the current date
             while (startDate < dateOnlyNow && endDate < dateOnlyNow)
             {
                 startDate = startDate.AddDays(28);

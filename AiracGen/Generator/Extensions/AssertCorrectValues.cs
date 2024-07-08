@@ -1,6 +1,6 @@
-﻿namespace AiracGen.Generator
+﻿namespace AiracGen.Generator.Extensions
 {
-    internal static partial class AiracGenExtensions
+    public static partial class AiracGenExtensions
     {
         internal static bool AreAllValuesCorrect(this List<Airac> airacs)
         {

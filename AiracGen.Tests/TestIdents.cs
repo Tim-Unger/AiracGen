@@ -4,11 +4,11 @@ namespace AiracGen.Tests
     {
 
         [Test]
-        public void AreAllIdentsValidShoudlReturnTrue()
+        public void AreAllIdentsValidShoudReturnTrue()
         {
-            var years = new List<int>() { 1980 };
+            var years = new List<int>() { 2000 };
 
-            for (var i = 1980; i < 2100; i++) 
+            for (var i = 2000; i < 2099; i++) 
             {
                 years.Add(i + 1);
             }

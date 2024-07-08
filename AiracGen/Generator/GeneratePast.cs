@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using AiracGen.Generator.Extensions;
+using System.Diagnostics;
 
 namespace AiracGen.Generator
 {
@@ -6,6 +7,16 @@ namespace AiracGen.Generator
     {
         internal static List<Airac> GeneratePast(int amount)
         {
+            if (amount < 0)
+            {
+                throw new InvalidDataException("Amount must be positive");
+            }
+
+            if (amount == 0)
+            {
+                throw new InvalidDataException("Amount can not be 0");
+            }
+
             var currentAirac = GenerateCurrent();
 
             var airacs = new List<Airac>();
@@ -24,6 +35,11 @@ namespace AiracGen.Generator
 
                 airac.StartDate = startDate;
                 airac.EndDate = endDate;
+
+                if (startDate.Year >= 2100)
+                {
+                    continue;
+                }
 
                 var maxAmountOfCyclesInYear = 0;
                 var currentYear = startDate;
@@ -49,6 +65,7 @@ namespace AiracGen.Generator
 
             airacs = airacs.OrderBy(x => x.StartDate).ToList();
 
+#if DEBUG
             //Checks that everything got generated correctly
             if (!airacs.AreAllValuesCorrect())
             {
@@ -56,7 +73,7 @@ namespace AiracGen.Generator
                     "The program should have already thrown earlier, something went wrong"
                 );
             }
-
+#endif
             return airacs;
         }
     }

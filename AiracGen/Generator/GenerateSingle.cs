@@ -2,11 +2,16 @@
 {
     internal static partial class Gen
     {
-        internal static Airac GenerateSingle(string ident)
+        internal static Airac GenerateByIdent(string ident)
         {
             if (ident.Length != 4)
             {
-                throw new ArgumentOutOfRangeException("Please provide a four letter ident");
+                throw new InvalidDataException("Please provide a four letter ident");
+            }
+
+            if(!int.TryParse(ident, out _))
+            {
+                throw new InvalidDataException("Ident is not a number");
             }
 
             var current = GenerateCurrent();
@@ -31,11 +36,15 @@
                 yearAmount = 1;
             }
 
-            //Generate 15* the amount of years in the ident given airacs. This insures that we cover every airac for every possible year
-            var airacs = AiracGenerator.GeneratePastAndFuture(15 * yearAmount, 15 * yearAmount);
+            //If the ident we are looking for is in the year 2099 we can't create any airacs for the year 2100 currently, so we will need to skip/ignore the future airacs for 2100
+            var futureYearAmount = ident.StartsWith("99") ? 0 : yearAmount;
 
-            return airacs.FirstOrDefault(x => x.Ident == ident)
-                ?? throw new Exception($"Ident {ident} not found");
+            //Generate 15* the amount of years in the ident given airacs. This insures that we cover every airac for every possible year
+            var airacs = AiracGenerator.GeneratePastAndFuture(15 * yearAmount, 15 * futureYearAmount);
+
+            var airac = airacs.FirstOrDefault(x => x.Ident == ident);
+            return airac
+                ?? throw new KeyNotFoundException($"Ident {ident} not found");
         }
     }
 }

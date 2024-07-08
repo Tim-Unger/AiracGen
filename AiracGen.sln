@@ -12,7 +12,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AiracGen.Tests", "AiracGen.Tests\AiracGen.Tests.csproj", "{9766CE77-FDA9-4E51-B288-6EE1227E8669}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AiracGen.Tests", "AiracGen.Tests\AiracGen.Tests.csproj", "{9766CE77-FDA9-4E51-B288-6EE1227E8669}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AiracGen.Benchmarks", "AiracGen.Benchmarks\AiracGen.Benchmarks.csproj", "{AA3AE949-4D07-45EB-BD45-EDC5B59EA10C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,6 +34,10 @@ Global
 		{9766CE77-FDA9-4E51-B288-6EE1227E8669}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9766CE77-FDA9-4E51-B288-6EE1227E8669}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9766CE77-FDA9-4E51-B288-6EE1227E8669}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA3AE949-4D07-45EB-BD45-EDC5B59EA10C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA3AE949-4D07-45EB-BD45-EDC5B59EA10C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA3AE949-4D07-45EB-BD45-EDC5B59EA10C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA3AE949-4D07-45EB-BD45-EDC5B59EA10C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

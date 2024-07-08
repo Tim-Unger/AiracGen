@@ -31,7 +31,15 @@ namespace AiracGen
         /// </summary>
         /// <param name="ident">the ident of the Airac to generate</param>
         /// <returns></returns>
-        public static Airac GenerateSingle(string ident) => Gen.GenerateSingle(ident);
+        [Obsolete("GenerateSingle is deprecated, please use GenerateByIdent instead")]
+        public static Airac GenerateSingle(string ident) => Gen.GenerateByIdent(ident);
+
+        /// <summary>
+        /// Generate a single Airac identified by the ident provided
+        /// </summary>
+        /// <param name="ident">the ident of the Airac to generate</param>
+        /// <returns></returns>
+        public static Airac GenerateByIdent(string ident) => Gen.GenerateByIdent(ident);
 
         /// <summary>
         /// Generate Airacs identified by the idents provided
@@ -74,7 +82,7 @@ namespace AiracGen
 
         /// <summary>
         /// Get all Airacs in the provided year
-        /// If you only provide two chars (e.g. 23) the program assums that you mean the current century (=> 2023)
+        /// If you only provide two chars (e.g. 23) the program assumes that you mean the current century (=> 2023)
         /// </summary>
         /// <param name="year">the year you want to get the Airacs of</param>
         /// <returns></returns>
@@ -87,16 +95,34 @@ namespace AiracGen
         /// <param name="startYear">The Start-Year</param>
         /// <param name="endYear">The End-Year</param>
         /// <returns></returns>
-        public static List<Airac> GenerateBetweenYears(int startYear, int endYear) => Gen.GenerateBetweenYearsUnsorted(startYear, endYear);
+        public static List<Airac> GenerateBetweenYears(int startYear, int endYear) => Gen.GenerateBetweenYearsUnsorted(startYear, endYear, true);
 
         /// <summary>
-        /// Gets all Airacs between the given years (inclusive of the provided years)
-        /// The Airacs are sorted into sublists of the respective year
+        /// Gets all Airacs between the given years
+        /// Squashed into a single List<Airac> with all Airacs
         /// </summary>
         /// <param name="startYear">The Start-Year</param>
         /// <param name="endYear">The End-Year</param>
         /// <returns></returns>
-        public static List<List<Airac>> GenerateBetweenYearsSorted(int startYear, int endYear) => Gen.GenerateBetweenYearsSorted(startYear, endYear);
+        public static List<Airac> GenerateBetweenYears(int startYear, int endYear, bool inclusive) => Gen.GenerateBetweenYearsUnsorted(startYear, endYear, inclusive);
+
+        /// <summary>
+        /// Gets all Airacs between the given years (inclusive of the provided years)
+        /// The Airacs are sorted into sub-lists of the respective year
+        /// </summary>
+        /// <param name="startYear">The Start-Year</param>
+        /// <param name="endYear">The End-Year</param>
+        /// <returns></returns>
+        public static List<List<Airac>> GenerateBetweenYearsSorted(int startYear, int endYear) => Gen.GenerateBetweenYearsSorted(startYear, endYear, true);
+
+        /// <summary>
+        /// Gets all Airacs between the given years
+        /// The Airacs are sorted into sub-lists of the respective year
+        /// </summary>
+        /// <param name="startYear">The Start-Year</param>
+        /// <param name="endYear">The End-Year</param>
+        /// <returns></returns>
+        public static List<List<Airac>> GenerateBetweenYearsSorted(int startYear, int endYear, bool inclusive) => Gen.GenerateBetweenYearsSorted(startYear, endYear, inclusive);
 
         /// <summary>
         /// Gets all Airacs of the given years
@@ -108,7 +134,7 @@ namespace AiracGen
 
         /// <summary>
         /// Gets all Airacs of the given years
-        /// The Airacs are sorted into sublists of the respective year
+        /// The Airacs are sorted into sub-lists of the respective year
         /// </summary>
         /// <param name="years">the respective years</param>
         /// <returns></returns>

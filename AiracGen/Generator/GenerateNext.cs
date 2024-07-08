@@ -13,7 +13,7 @@
                 return AiracGenerator.GenerateFuture(1)[0];
             }
 
-            var currentAirac = AiracGenerator.GenerateSingle(ident);
+            var currentAirac = AiracGenerator.GenerateByIdent(ident);
 
             var numberInYear = currentAirac.StartDate.Year != currentAirac.StartDate.AddDays(28).Year ? 1 : currentAirac.NumberInYear += 1;
 

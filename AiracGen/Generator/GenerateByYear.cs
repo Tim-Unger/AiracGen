@@ -4,6 +4,12 @@
     {
         internal static List<Airac> GenerateByYear(int year)
         {
+
+            if(year > 2099 || year < 2000)
+            {
+                throw new InvalidDataException("The provided year needs to be between 2000 and 2099");
+            }
+
             //If only a two "letter" year is provided, we assume that is means the current century, so we will add 2000 years (so 23 + 2000 = 2023)
             if(year < 100)
             {
@@ -47,7 +53,7 @@
             }
 
             //We now have every possible Ident in the provided year, so we can create an Airac of every Ident
-            return identList.Select(AiracGenerator.GenerateSingle).ToList();
+            return identList.Select(AiracGenerator.GenerateByIdent).ToList();
         }
     }
 }

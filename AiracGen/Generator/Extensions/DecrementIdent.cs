@@ -1,6 +1,6 @@
-﻿namespace AiracGen.Generator
+﻿namespace AiracGen.Generator.Extensions
 {
-    internal static partial class AiracGenExtensions
+    public static partial class AiracGenExtensions
     {
         internal static string DecrementIdent(this string startIdent, DateOnly startDate)
         {
@@ -25,7 +25,8 @@
                 }
 
                 //Decrement the Airac Ident to the previous year
-                var previousYearIdent = $"{startIdentYear -= 1}{maxAmountOfCyclesInYear}";
+                var previousIdentYear = startIdentYear -= 1;
+                var previousYearIdent = $"{previousIdentYear}{maxAmountOfCyclesInYear}";
 
                 //If the year is smaller than 10, we have to add a leading zero, otherwise the ident will be too short
                 if (startIdentYear < 10)
@@ -56,5 +57,7 @@
 
             return concatIdent;
         }
+
+        public static Airac DecrementIdent(this Airac airac) => AiracGenerator.GeneratePrevious(airac.Ident);
     }
 }

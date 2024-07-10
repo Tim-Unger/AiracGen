@@ -28,5 +28,11 @@ namespace AiracGen.Tests
                 Assert.Fail();
             }
         }
+
+        [Test]
+        public void AreAllAiracsValidShoudlReturnTrue() 
+        {
+            AiracGenerator.GenerateBetweenYears(2000, 2099);
+        }
     }
 }

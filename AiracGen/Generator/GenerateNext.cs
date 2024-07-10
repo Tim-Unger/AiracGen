@@ -1,4 +1,6 @@
-﻿namespace AiracGen.Generator
+﻿using AiracGen.Generator.Extensions;
+
+namespace AiracGen.Generator
 {
     internal static partial class Gen
     {
@@ -15,6 +17,7 @@
 
             var currentAirac = AiracGenerator.GenerateByIdent(ident);
 
+            //If the next airac is in the next year it will be the first one of that year, if it is in the same one it will be one number up
             var numberInYear = currentAirac.StartDate.Year != currentAirac.StartDate.AddDays(28).Year ? 1 : currentAirac.NumberInYear += 1;
 
             return new Airac()

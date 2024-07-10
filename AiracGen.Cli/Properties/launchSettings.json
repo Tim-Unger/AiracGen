@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "AiracGen.Cli": {
+      "commandName": "Project",
+      "commandLineArgs": "-y 2024"
+    }
+  }
+}

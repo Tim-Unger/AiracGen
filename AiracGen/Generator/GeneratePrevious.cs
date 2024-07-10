@@ -1,4 +1,6 @@
-﻿namespace AiracGen.Generator
+﻿using AiracGen.Generator.Extensions;
+
+namespace AiracGen.Generator
 {
     internal static partial class Gen
     {

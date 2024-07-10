@@ -4,7 +4,7 @@ namespace AiracGen.Benchmarks
 {
     internal class Program
     {
-        static void Main(string[] _)
+        static void Main()
         {
             BenchmarkRunner.Run<Benchmarks>();
         }

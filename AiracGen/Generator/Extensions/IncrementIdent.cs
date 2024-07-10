@@ -36,7 +36,5 @@
 
            return $"{identYear}{identString}";
         }
-
-        public static Airac IncrementAirac(this Airac airac) => AiracGenerator.GenerateNext(airac.Ident);
     }
 }

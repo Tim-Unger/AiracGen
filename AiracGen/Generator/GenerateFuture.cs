@@ -12,10 +12,11 @@ namespace AiracGen.Generator
                 throw new InvalidDataException("Amount must be positive");
             }
 
-            if(amount == 0)
-            {
-                throw new InvalidDataException("Amount can not be 0");
-            }
+            //TODO
+            //if(amount == 0)
+            //{
+            //    throw new InvalidDataException("Amount can not be 0");
+            //}
 
             var currentAirac = GenerateCurrent();
 

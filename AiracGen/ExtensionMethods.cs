@@ -1,6 +1,6 @@
 ﻿using System.Text.Json;
 
-namespace AiracGen
+namespace AiracGen.Generator.Extensions
 {
     public static class JsonExtension
     {
@@ -8,11 +8,19 @@ namespace AiracGen
 
         public static string ToJson(this List<Airac> airacs) => JsonSerializer.Serialize(airacs, _options);
 
+        public static string ToJson(this List<Airac> airacs, JsonSerializerOptions options) => JsonSerializer.Serialize(airacs, options);
+
         public static string ToJson(this Airac airac) => JsonSerializer.Serialize(airac, _options);
+
+        public static string ToJson(this Airac airac, JsonSerializerOptions options) => JsonSerializer.Serialize(airac, options);
 
         public static void SaveJson(this List<Airac> airacs, string path) => File.WriteAllText(GetFullPath(path), JsonSerializer.Serialize(airacs, _options));
 
+        public static void SaveJson(this List<Airac> airacs, string path, JsonSerializerOptions options) => File.WriteAllText(GetFullPath(path), JsonSerializer.Serialize(airacs, options));
+
         public static void SaveJson(this Airac airac, string path) => File.WriteAllText(GetFullPath(path), JsonSerializer.Serialize(airac, _options));
+
+        public static void SaveJson(this Airac airac, string path, JsonSerializerOptions options) => File.WriteAllText(GetFullPath(path), JsonSerializer.Serialize(airac, options));
 
         private static string GetFullPath(string path)
         {

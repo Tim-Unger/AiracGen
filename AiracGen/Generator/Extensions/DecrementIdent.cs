@@ -57,7 +57,5 @@
 
             return concatIdent;
         }
-
-        public static Airac DecrementIdent(this Airac airac) => AiracGenerator.GeneratePrevious(airac.Ident);
     }
 }

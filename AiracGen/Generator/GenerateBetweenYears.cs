@@ -10,9 +10,9 @@
         {
             var years = new List<int>();
 
-            if(startYear < endYear)
+            if(startYear > endYear)
             {
-                throw new InvalidDataException("Start Year was smaller than the End Year");
+                throw new InvalidDataException("Start Year was greater than the End Year");
             }
 
             if(startYear == endYear)

@@ -5,16 +5,16 @@ namespace AiracGen.Benchmarks
     [MemoryDiagnoser]
     public class Benchmarks
     {
-        [Benchmark]
+        //[Benchmark]
         public void CreateAiracCloseToCurrentDate() => AiracGenerator.GenerateByIdent("2201");
 
-        [Benchmark]
+        //[Benchmark]
         public void CreateAiracFarInTheFuture() => AiracGenerator.GenerateByIdent("8605");
 
-        [Benchmark]
+        //[Benchmark]
         public void CreateAiracFarInThePast() => AiracGenerator.GenerateByIdent("0204");
 
-        [Benchmark]
+        //[Benchmark]
         public void CreateCurrentAirac() => AiracGenerator.GenerateCurrent();
 
         [Benchmark]
